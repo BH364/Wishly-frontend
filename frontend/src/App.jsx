@@ -17,7 +17,7 @@ import Cart from './pages/Cart'
 import Verify from './pages/Verify'
 // import Profile from './pages/Profile'
 import Settings from './pages/Settings';
-import { useThemeStore } from './store/useThemeStore.js'
+import { useThemeStore } from '../src/Store/useThemeStore.js'
 const App = () => {
   const { theme } = useThemeStore();
 
