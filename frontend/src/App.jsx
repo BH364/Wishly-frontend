@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Routes,Route } from 'react-router-dom'
 import Home from './pages/Home'
 import Collection from './pages/Collection'
@@ -15,7 +15,16 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Cart from './pages/Cart'
 import Verify from './pages/Verify'
+// import Profile from './pages/Profile'
+import Settings from './pages/Settings';
+import { useThemeStore } from './store/useThemeStore.js'
 const App = () => {
+  const { theme } = useThemeStore();
+
+  useEffect(() => {
+    document.documentElement.setAttribute('data-theme', theme);
+  }, [theme]);
+
   return (
     <div className='px-4 sm:px-[5vw] md:px-[7vw] lg:px-[9vw]'>
       <Navbar />
@@ -32,6 +41,8 @@ const App = () => {
         <Route path='/place-order' element={<PlaceOrder />} />
         <Route path='/orders' element={<Orders />} />
         <Route path='/verify' element={<Verify />} />
+        {/* <Route path='/profile' element={<Profile />} /> */}
+        <Route path='/settings' element={<Settings />} />
       </Routes>
       <Footer />
     </div>

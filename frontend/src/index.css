@@ -3,8 +3,33 @@
 @tailwind components;
 @tailwind utilities;
 
-a.active hr{
+a.active hr {
   display: block;
+  border: none; /* Remove default styling */
+  height: 2px;  /* Set the desired thickness */
+  background-color: currentColor; /* Match the current text color */
+}
+button {
+  background-color: var(--text-color); /* Button background matches the theme's text color */
+  color: var(--bg-color);
+  padding: 0.5rem 1rem; /* Add spacing inside buttons */
+  border:1px solid currentColor; /* Remove default border */
+  border-radius: 0.375rem; /* Slightly rounded corners */
+  font-size: 1rem; /* Default font size */
+  cursor: pointer; /* Add pointer cursor for interactivity */
+  transition: all 0.3s ease; /* Smooth transition for hover effects */
+}
+
+/* Hover effect for all buttons */
+button:hover {
+  opacity: 0.9;
+  padding:1.2rem 2.5rem; /* Slight transparency on hover */
+}
+
+/* Additional focus styles for accessibility */
+button:focus {
+  outline: 2px solid currentColor; /* Add focus outline */
+  outline-offset: 2px;
 }
 *{
   font-family: Outfit;

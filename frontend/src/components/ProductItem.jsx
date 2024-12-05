@@ -6,9 +6,8 @@ const ProductItem = ({ id, image, name, price, bestseller }) => {
   const { currency } = useContext(ShopContext);
 
   return (
-    <Link className="text-gray-700 cursor-pointer" to={`/products/${id}`}>
+    <Link className="cursor-pointer" to={`/products/${id}`}>
       <div className="relative overflow-hidden">
-        {/* Display Bestseller Mark */}
         {bestseller && (
           <div className="absolute top-2 left-2 bg-cyan-500 text-white text-xs font-bold px-2 py-1 rounded shadow-md z-10">
             Bestseller
