@@ -50,7 +50,11 @@ const PlaceOrder = () => {
            }
            switch(method){
             case 'cod':
-              const response = await axios.post(`${backendUrl}/order/place`,orderData,{headers:token,withCredentials:true});
+              const response = await axios.post(`${backendUrl}/order/place`,orderData,{
+                headers: {
+                  Authorization: `Bearer ${token}`, // Include token in headers if needed
+                },
+                withCredentials:true});
               if(response.data.success){
                  setCartItems([]);
                  navigate('/orders')
