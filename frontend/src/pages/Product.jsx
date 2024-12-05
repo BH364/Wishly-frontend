@@ -61,7 +61,7 @@ const Product = () => {
               {productData.sizes.map((item, index) => (
                 <p
                   key={index}
-                  className={`border py-2 px-4 ${item === size ? 'border-orange-500 bg-gray-200' : 'bg-gray-100'}`}
+                  className={`border py-2 px-4 text-black ${item === size ? 'bg-lime-300' : 'bg-gray-100'}`}
                   onClick={() => setSize(item)}
                 >
                   {item}
