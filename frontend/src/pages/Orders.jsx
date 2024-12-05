@@ -16,7 +16,7 @@ const Orders = () => {
         `${backendUrl}/order/userorders`,
         {},
         {
-          headers: token,
+          headers: {token},
           withCredentials: true,
         }
       );

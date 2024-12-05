@@ -51,9 +51,8 @@ const PlaceOrder = () => {
            switch(method){
             case 'cod':
               const response = await axios.post(`${backendUrl}/order/place`,orderData,{
-                headers: {
-                  Authorization: `Bearer ${token}`, // Include token in headers if needed
-                },
+                headers: {token}, // Include token in headers if needed
+                
                 withCredentials:true});
               if(response.data.success){
                  setCartItems([]);
@@ -65,9 +64,7 @@ const PlaceOrder = () => {
               break;
             case 'stripe':
               const responseStripe = await axios.post(`${backendUrl}/order/stripe`,orderData,{
-                headers: {
-                  Authorization: `Bearer ${token}`, // Include token in headers if needed
-                },
+                headers: {token},
                 
                 withCredentials:true
               });
