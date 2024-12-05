@@ -65,7 +65,10 @@ const PlaceOrder = () => {
               break;
             case 'stripe':
               const responseStripe = await axios.post(`${backendUrl}/order/stripe`,orderData,{
-                headers:token,
+                headers: {
+                  Authorization: `Bearer ${token}`, // Include token in headers if needed
+                },
+                
                 withCredentials:true
               });
               if(responseStripe.data.success){
