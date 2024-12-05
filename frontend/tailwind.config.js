@@ -1,5 +1,7 @@
-// Use CommonJS syntax if necessary
-module.exports = {
+import daisyui from 'daisyui';
+
+/** @type {import('tailwindcss').Config} */
+export default {
   content: [
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
@@ -7,7 +9,8 @@ module.exports = {
   theme: {
     extend: {},
   },
-  plugins: [require('daisyui')],
+  plugins: [daisyui],
+
   daisyui: {
     themes: [
       "light", "dark", "cupcake", "bumblebee", "emerald", "corporate",
